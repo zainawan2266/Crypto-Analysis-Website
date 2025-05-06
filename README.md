@@ -8,9 +8,18 @@
 - 📈 **Price Charts**  
   Predict future prices using machine learning algorithms based on historical data.
 
-
 - 💬 **Sentiment Analysis**  
   Analyze news and Reddit posts to gauge public sentiment towards specific cryptocurrencies.
+  
+- 🔥 **Crypto Heat Maps**  
+  Interactive heat maps that visually represent market performance by color and size.
+
+- 🤖 **Crypto Bubbles View**  
+  Display live cryptocurrency data in a bubble chart layout powered by the Crypto Bubbles API.
+
+- 📊 **Rankings & Trends**  
+  Real-time coin rankings, trends, and fundamental data using the Crypto Rank API.
+
 
 
 ## 🌐 Requirements
@@ -31,7 +40,11 @@
 
 **APIs / Data Sources**  
 - [CoinGecko](https://www.coingecko.com/) – for real-time coin prices and market data  
-- [CoinGlass](https://www.coinglass.com/) – for derivatives and futures data  
+- [CoinGlass](https://www.coinglass.com/) – for derivatives and futures data
+- [Crypto Bubbles API](https://cryptobubbles.net/) – real-time market bubble view  
+- [Crypto Rank API](https://cryptorank.io/) – rankings, fundamentals, and token metrics  
+- Custom Heatmap Visuals
 
-## 📁 Best Wishes 
+ 
+# 🎉 Best Wishes & Happy Coding! 🚀✨
 
