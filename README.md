@@ -15,7 +15,9 @@
 
 ## 🌐 Requirements
 
-- Note: Copy your AI Assistant Key from [Ai Studio](https://aistudio.google.com/apikey/)
+**Note** 
+-  Copy your AI Assistant Key from [Ai Studio](https://aistudio.google.com/apikey/)
+-  Take your complete dark theme widget from [RSS](https://rss.app/feed/tp5hjuNPwq8sSPKz/embed?tab=wall/)
 
 ## 🧰 Tech Stack
 
