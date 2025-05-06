@@ -1,0 +1,1819 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MZA Crypto Hub - Your Guide to Making Sense of Crypto</title>
+  <link rel="shortcut icon" href="assets/images/Main Logo.jpj.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+    password kLPqVDyEGrisY
+    if0_38905711
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/BLUE TRANS LOGO.png" width="32" height="32" alt="MZA logo">
+        Crypto Hub
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link active" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="news.html" class="navbar-link" data-nav-link>Crypto News</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="markets.html" class="navbar-link" data-nav-link>Markets Analysis</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="research.html" class="navbar-link" data-nav-link>Research</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="bubble.html" class="navbar-link" data-nav-link>Crypto Bubbles</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <a href="ai.html" class="btn btn-outline">AI Assistant</a>
+
+    </div>
+  </header>
+
+
+  <main>
+
+
+    <article>
+
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="hero" data-section>
+        <div class="container">
+          <div class="hero-content">
+            <p class="mobb">Dive deeper into digital assets with</p>
+            <h1 class="h1 hero-title">MZA Crypto Hub’s expert analysis</h1>
+            <p class="hero-text">
+              Your Guide to Making Sense of Crypto. Where innovation meets precision in crypto analytics.
+            </p>
+            <div class="mobile-button-wrapper">
+              <a href="research.html" class="btn btn-primary">Market overview</a>
+            </div>
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="570" height="448" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TREND
+      -->
+
+      <section class="section trend" aria-label="crypto trend" data-section>
+        <div class="container">
+
+          <div class="trend-tab">
+
+            <ul class="tab-nav">
+
+              <li>
+                <button class="tab-btn active">Crypto</button>
+              </li>
+              <li>
+                <button class="tab-btn"><a href="markets.html ">Charts</a></button>
+              </li>
+
+              <li>
+                <button class="tab-btn"><a href="research.html#heat"> Heatmap</a></button>
+              </li>
+
+              <li>
+                <button class="tab-btn"><a href="research.html#tech"> Orders</a></button>
+              </li>
+
+           
+              <li>
+                <button  class="tab-btn"><a href="ai.html">Assistant</a></button>
+              </li>
+
+              <li>
+                <button class="tab-btn"><a href="#h2 section-title"> Starter Guide></a></button>
+              </li>
+
+              <li>
+                <button class="tab-btn"><a href="bubble.html">Bubbles</a> </button>
+              </li>
+
+            </ul>
+
+            <ul class="tab-content">
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="./assets/images/coin-1.svg" width="24" height="24" alt="bitcoin logo">
+
+                    <a href="#" class="card-title">
+                      Bitcoin <span class="span">BTC/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="46168.95">
+                    <h1>BTC/USDT</h1>
+                    <div id="price">Loading...</div>
+
+                    <script>
+                      async function fetchBTCPrice() {
+                        try {
+                          const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
+                          const data = await response.json();
+                          document.getElementById('price').textContent = `$${parseFloat(data.price).toLocaleString()}`;
+                        } catch (error) {
+                          document.getElementById('price').textContent = "Error fetching price";
+                          console.error(error);
+                        }
+                      }
+
+                      // Update price every second
+                      fetchBTCPrice();
+                      setInterval(fetchBTCPrice, 1000);
+                    </script>
+                  </data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="96,142.18">96,142.18</data>
+
+                    <div class="badge red"> <div id="change24h">Loading...</div>
+
+                    <script>
+                      async function fetchBTCChange() {
+                        try {
+                          const response = await fetch('https://api.coinpaprika.com/v1/tickers/btc-bitcoin');
+                          const data = await response.json();
+                  
+                          const change24h = data.quotes.USD.percent_change_24h;
+                  
+                          document.getElementById('change24h').innerText =
+                            `  ${change24h.toFixed(2)}%`;
+                        } catch (error) {
+                          document.getElementById('change24h').innerText = 'Error loading data.';
+                          console.error('Error:', error);
+                        }
+                      }
+                  
+                      fetchBTCChange();
+                      setInterval(fetchBTCChange, 60000); // Update every 60 seconds
+                    </script></div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card active">
+
+                  <div class="card-title-wrapper">
+                    <img src="./assets/images/coin-2.svg" width="24" height="24" alt="ethereum logo">
+
+                    <a href="#" class="card-title">
+                      Ethereum <span class="span">ETH/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="3480.04">
+                    <div class="eth-price-container">
+                      <div class="eth-title">ETH/USDT</div>
+                      <div class="eth-price" id="ethPrice">Loading...</div>
+                    </div>
+
+                    <script>
+                      async function fetchETHPrice() {
+                        try {
+                          const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT');
+                          const data = await response.json();
+                          document.getElementById('ethPrice').textContent = `$${parseFloat(data.price).toLocaleString()}`;
+                        } catch (error) {
+                          document.getElementById('ethPrice').textContent = "Error fetching price";
+                          console.error(error);
+                        }
+                      }
+
+                      fetchETHPrice();
+                      setInterval(fetchETHPrice, 1000);
+                    </script>
+                  </data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="1657.20">1657.20</data>
+
+                    <div class="badge green"><div id="ethChange24h" class="eth-change">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchETH24hChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/eth-ethereum');
+                        if (!response.ok) throw new Error("Failed to fetch ETH data");
+                        const data = await response.json();
+                
+                        const percentChange = data.quotes?.USD?.percent_change_24h;
+                
+                        if (percentChange !== undefined) {
+                          document.getElementById("ethChange24h").innerText = `${percentChange.toFixed(2)}%`;
+                        } else {
+                          document.getElementById("ethChange24h").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ETH fetch error:", error);
+                        document.getElementById("ethChange24h").innerText = "Error loading ETH data.";
+                      }
+                    }
+                
+                    fetchETH24hChange();
+                    setInterval(fetchETH24hChange, 60000); // refresh every 60 seconds
+                  </script>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="./assets/images/coin-3.svg" width="24" height="24" alt="tether logo">
+
+                    <a href="#" class="card-title">
+                      Tether <span class="span">USDT/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="1.00">
+                    <div class="usdt-usdc-box">
+                      <div class="usdt-usdc-title">USDT/USDC</div>
+                      <div class="usdt-usdc-price" id="usdtUsdcPrice">Loading...</div>
+                    </div>
+
+                    <script>
+                      async function fetchUSDTUSDC() {
+                        try {
+                          const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=USDCUSDT');
+                          const data = await response.json();
+                          const inversePrice = 1 / parseFloat(data.price);
+                          document.getElementById('usdtUsdcPrice').textContent = inversePrice.toFixed(6);
+                        } catch (error) {
+                          document.getElementById('usdtUsdcPrice').textContent = "Error fetching price";
+                          console.error(error);
+                        }
+                      }
+
+                      fetchUSDTUSDC();
+                      setInterval(fetchUSDTUSDC, 1000);
+                    </script>
+                  </data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="1.20">1.007</data>
+
+                    <div class="badge red">-0.01%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="./assets/images/coin-4.svg" width="24" height="24" alt="bnb logo">
+
+                    <a href="#" class="card-title">
+                      BNB <span class="span">BNB/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="603.56">
+                    <div class="bnb-box">
+                      <div class="bnb-title">BNB/USDT</div>
+                      <div class="bnb-price" id="bnbPrice">Loading...</div>
+                    </div>
+
+                    <script>
+                      async function fetchBNBPrice() {
+                        try {
+                          const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT');
+                          const data = await response.json();
+                          document.getElementById('bnbPrice').textContent = `$${parseFloat(data.price).toLocaleString()}`;
+                        } catch (error) {
+                          document.getElementById('bnbPrice').textContent = "Error fetching price";
+                          console.error(error);
+                        }
+                      }
+
+                      fetchBNBPrice();
+                      setInterval(fetchBNBPrice, 1000);
+                    </script>
+                  </data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="605.46">605.46</data>
+
+                    <div class="badge red"> <div id="bnbChange24h" class="bnb-change">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchBNB24hChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/bnb-binance-coin');
+                        if (!response.ok) throw new Error("Failed to fetch BNB data");
+                        const data = await response.json();
+                
+                        const percentChange = data.quotes?.USD?.percent_change_24h;
+                
+                        if (percentChange !== undefined) {
+                          document.getElementById("bnbChange24h").innerText = `${percentChange.toFixed(2)}%`;
+                        } else {
+                          document.getElementById("bnbChange24h").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("BNB fetch error:", error);
+                        document.getElementById("bnbChange24h").innerText = "Error loading BNB data.";
+                      }
+                    }
+                
+                    fetchBNB24hChange();
+                    setInterval(fetchBNB24hChange, 60000); // refresh every 60 seconds
+                  </script></div>
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+     
+
+
+
+
+
+      <!-- 
+        - #MARKET
+      -->
+
+      <section class="section market" aria-label="market update" data-section>
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Market Update</h2>
+
+            <a href="research.html#allcoins"
+class="btn-link">See All Coins</a>
+          </div>
+
+         
+
+            <table class="market-table">
+
+              <thead class="table-head">
+
+                <tr class="table-row table-title">
+
+                  <th class="table-heading"></th>
+
+                  <th class="table-heading" scope="col">#</th>
+
+                  <th class="table-heading" scope="col">Name</th>
+
+                  <th class="table-heading" scope="col">Last Price</th>
+
+                  <th class="table-heading" scope="col">24h %</th>
+
+                  <th class="table-heading" scope="col">Market Cap</th>
+
+                  <th class="table-heading" scope="col">Last 7 Days</th>
+
+                  <th class="table-heading"></th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="table-body">
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">1</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-1.svg" width="20" height="20" alt="Bitcoin logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Bitcoin <span class="span">BTC</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">    <div id="btcPrice" class="btc-price-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchBTCPrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch BTC live price");
+                        const data = await response.json();
+                
+                        const btcPrice = data.bitcoin?.usd;
+                
+                        if (btcPrice !== undefined) {
+                          document.getElementById("btcPrice").innerText = `$${btcPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("btcPrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("BTC live price fetch error:", error);
+                        document.getElementById("btcPrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchBTCPrice();
+                    setInterval(fetchBTCPrice, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data last-update green"><div id="btcChange" class="btcchange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchBTCChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/btc-bitcoin');
+                        if (!response.ok) throw new Error("Failed to fetch BTC 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("btcChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("btcChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("BTC 24h change fetch error:", error);
+                        document.getElementById("btcChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchBTCChange();
+                    setInterval(fetchBTCChange, 60000); // Refresh every 60 seconds
+                  </script>
+                
+                </td>
+
+                  <td class="table-data market-cap"> <div id="marketCap">Loading...</div>
+
+                    <script>
+                      async function fetchMarketCap() {
+                        try {
+                          const response = await fetch('https://api.coinpaprika.com/v1/tickers/btc-bitcoin');
+                          const data = await response.json();
+                          const marketCap = data.quotes.USD.market_cap;
+                  
+                          document.getElementById('marketCap').innerText =
+                            ` $${marketCap.toLocaleString()}`;
+                        } catch (error) {
+                          document.getElementById('marketCap').innerText = 'Error fetching market cap.';
+                          console.error(error);
+                        }
+                      }
+                  
+                      fetchMarketCap();
+                      setInterval(fetchMarketCap, 60000); // Refresh every 60 seconds
+                    </script>
+                  </td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">2</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-2.svg" width="20" height="20" alt="Ethereum logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Ethereum <span class="span">ETH</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price"><div id="ethLivePrice" class="eth-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchETHLivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch ETH live price");
+                        const data = await response.json();
+                
+                        const ethPrice = data.ethereum?.usd;
+                
+                        if (ethPrice !== undefined) {
+                          document.getElementById("ethLivePrice").innerText = `$${ethPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("ethLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ETH live price fetch error:", error);
+                        document.getElementById("ethLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchETHLivePrice();
+                    setInterval(fetchETHLivePrice, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data last-update red"> <div id="ethChange" class="ethchange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchETHChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/eth-ethereum');
+                        if (!response.ok) throw new Error("Failed to fetch ETH 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("ethChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("ethChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ETH 24h change fetch error:", error);
+                        document.getElementById("ethChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchETHChange();
+                    setInterval(fetchETHChange, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data market-cap">
+                    <div id="ethMarketCap" class="ethcap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchETHMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/eth-ethereum');
+                        if (!response.ok) throw new Error("Failed to fetch ETH market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("ethMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("ethMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ETH market cap fetch error:", error);
+                        document.getElementById("ethMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchETHMarketCap();
+                    setInterval(fetchETHMarketCap, 60000); // Refresh every 60 seconds
+                  </script>
+                
+                  </td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">3</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-3.svg" width="20" height="20" alt="Tether logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Tether <span class="span">USDT/USD</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price"><div id="usdtLivePrice" class="usdt-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchUSDTLivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch USDT live price");
+                        const data = await response.json();
+                
+                        const usdtPrice = data.tether?.usd;
+                
+                        if (usdtPrice !== undefined) {
+                          document.getElementById("usdtLivePrice").innerText = `$${usdtPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("usdtLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("USDT live price fetch error:", error);
+                        document.getElementById("usdtLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchUSDTLivePrice();
+                    setInterval(fetchUSDTLivePrice, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data last-update green">-0.01%</td>
+
+                  <td class="table-data market-cap"><div id="usdtMarketCap" class="usdtcap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchUSDTMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/usdt-tether');
+                        if (!response.ok) throw new Error("Failed to fetch USDT market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("usdtMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("usdtMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("USDT market cap fetch error:", error);
+                        document.getElementById("usdtMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchUSDTMarketCap();
+                    setInterval(fetchUSDTMarketCap, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">4</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-4.svg" width="20" height="20" alt="BNB logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">BNB <span class="span">BNB/USD</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price"><div id="bnbLivePrice" class="bnb-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchBNBLivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch BNB live price");
+                        const data = await response.json();
+                
+                        const bnbPrice = data.binancecoin?.usd;
+                
+                        if (bnbPrice !== undefined) {
+                          document.getElementById("bnbLivePrice").innerText = `$${bnbPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("bnbLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("BNB live price fetch error:", error);
+                        document.getElementById("bnbLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchBNBLivePrice();
+                    setInterval(fetchBNBLivePrice, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data last-update red"> <div id="bnbChange" class="bnbchange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchBNBChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/bnb-binance-coin');
+                        if (!response.ok) throw new Error("Failed to fetch BNB 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("bnbChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("bnbChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("BNB 24h change fetch error:", error);
+                        document.getElementById("bnbChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchBNBChange();
+                    setInterval(fetchBNBChange, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data market-cap"> <div id="bnbMarketCap" class="bnbcap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchBNBMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/bnb-binance-coin');
+                        if (!response.ok) throw new Error("Failed to fetch BNB market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("bnbMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("bnbMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("BNB market cap fetch error:", error);
+                        document.getElementById("bnbMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchBNBMarketCap();
+                    setInterval(fetchBNBMarketCap, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">5</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-5.svg" width="20" height="20" alt="Solana logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Solana <span class="span">SOL</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">   <div id="solLivePrice" class="sol-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchSOLLivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch SOL live price");
+                        const data = await response.json();
+                
+                        const solPrice = data.solana?.usd;
+                
+                        if (solPrice !== undefined) {
+                          document.getElementById("solLivePrice").innerText = `$${solPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("solLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("SOL live price fetch error:", error);
+                        document.getElementById("solLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchSOLLivePrice();
+                    setInterval(fetchSOLLivePrice, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data last-update green"><div id="solChange" class="solchange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchSOLChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/sol-solana');
+                        if (!response.ok) throw new Error("Failed to fetch SOL 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("solChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("solChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("SOL 24h change fetch error:", error);
+                        document.getElementById("solChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchSOLChange();
+                    setInterval(fetchSOLChange, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data market-cap"> <div id="solMarketCap" class="solcap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchSOLMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/sol-solana');
+                        if (!response.ok) throw new Error("Failed to fetch SOL market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("solMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("solMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("SOL market cap fetch error:", error);
+                        document.getElementById("solMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchSOLMarketCap();
+                    setInterval(fetchSOLMarketCap, 60000); // Refresh every 60 seconds
+                  </script></td> 
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">6</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-6.svg" width="20" height="20" alt="XRP logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">XRP <span class="span">XRP</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">   <div id="xrpLivePrice" class="xrp-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchXRPLivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch XRP live price");
+                        const data = await response.json();
+                
+                        const xrpPrice = data.ripple?.usd;
+                
+                        if (xrpPrice !== undefined) {
+                          document.getElementById("xrpLivePrice").innerText = `$${xrpPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("xrpLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("XRP live price fetch error:", error);
+                        document.getElementById("xrpLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchXRPLivePrice();
+                    setInterval(fetchXRPLivePrice, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data last-update red"> <div id="xrpChange" class="xrpchange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchXRPChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/xrp-xrp');
+                        if (!response.ok) throw new Error("Failed to fetch XRP 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("xrpChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("xrpChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("XRP 24h change fetch error:", error);
+                        document.getElementById("xrpChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchXRPChange();
+                    setInterval(fetchXRPChange, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data market-cap"> <div id="xrpMarketCap" class="xrpcap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchXRPMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/xrp-xrp');
+                        if (!response.ok) throw new Error("Failed to fetch XRP market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("xrpMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("xrpMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("XRP market cap fetch error:", error);
+                        document.getElementById("xrpMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchXRPMarketCap();
+                    setInterval(fetchXRPMarketCap, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">7</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-7.svg" width="20" height="20" alt="Cardano logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Cardano <span class="span">ADA</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price"> <div id="adaLivePrice" class="ada-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchADALivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=cardano&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch ADA live price");
+                        const data = await response.json();
+                
+                        const adaPrice = data.cardano?.usd;
+                
+                        if (adaPrice !== undefined) {
+                          document.getElementById("adaLivePrice").innerText = `$${adaPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("adaLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ADA live price fetch error:", error);
+                        document.getElementById("adaLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchADALivePrice();
+                    setInterval(fetchADALivePrice, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data last-update green"> <div id="adaChange" class="adachange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchADAChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/ada-cardano');
+                        if (!response.ok) throw new Error("Failed to fetch ADA 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("adaChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("adaChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ADA 24h change fetch error:", error);
+                        document.getElementById("adaChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchADAChange();
+                    setInterval(fetchADAChange, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data market-cap"><div id="adaMarketCap" class="adacap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchADAMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/ada-cardano');
+                        if (!response.ok) throw new Error("Failed to fetch ADA market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("adaMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("adaMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("ADA market cap fetch error:", error);
+                        document.getElementById("adaMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchADAMarketCap();
+                    setInterval(fetchADAMarketCap, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">8</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./assets/images/coin-8.svg" width="20" height="20" alt="Avalanche logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Avalanche <span class="span">AVAX</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price"> <div id="avaxLivePrice" class="avax-price-display">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchAVAXLivePrice() {
+                      try {
+                        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=avalanche-2&vs_currencies=usd');
+                        if (!response.ok) throw new Error("Failed to fetch AVAX live price");
+                        const data = await response.json();
+                
+                        const avaxPrice = data['avalanche-2']?.usd;
+                
+                        if (avaxPrice !== undefined) {
+                          document.getElementById("avaxLivePrice").innerText = `$${avaxPrice.toFixed(2)}`;
+                        } else {
+                          document.getElementById("avaxLivePrice").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("AVAX live price fetch error:", error);
+                        document.getElementById("avaxLivePrice").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchAVAXLivePrice();
+                    setInterval(fetchAVAXLivePrice, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data last-update green"> <div id="avaxChange" class="avaxchange-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchAVAXChange() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/avax-avalanche');
+                        if (!response.ok) throw new Error("Failed to fetch AVAX 24h change");
+                        const data = await response.json();
+                
+                        const change = data.quotes?.USD?.percent_change_24h;
+                
+                        if (change !== undefined) {
+                          const formattedChange = change.toFixed(2);
+                          document.getElementById("avaxChange").innerText = `${formattedChange}%`;
+                        } else {
+                          document.getElementById("avaxChange").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("AVAX 24h change fetch error:", error);
+                        document.getElementById("avaxChange").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchAVAXChange();
+                    setInterval(fetchAVAXChange, 60000); // Refresh every 60 seconds
+                  </script>
+                </td>
+
+                  <td class="table-data market-cap"><div id="avaxMarketCap" class="avaxcap-value">Loading...</div>
+                  </div>
+                
+                  <script>
+                    async function fetchAVAXMarketCap() {
+                      try {
+                        const response = await fetch('https://api.coinpaprika.com/v1/tickers/avax-avalanche');
+                        if (!response.ok) throw new Error("Failed to fetch AVAX market cap");
+                        const data = await response.json();
+                
+                        const marketCap = data.quotes?.USD?.market_cap;
+                
+                        if (marketCap !== undefined) {
+                          document.getElementById("avaxMarketCap").innerText =
+                            `$${marketCap.toLocaleString()}`;
+                        } else {
+                          document.getElementById("avaxMarketCap").innerText = "Data unavailable.";
+                        }
+                      } catch (error) {
+                        console.error("AVAX market cap fetch error:", error);
+                        document.getElementById("avaxMarketCap").innerText = "Error loading data.";
+                      }
+                    }
+                
+                    fetchAVAXMarketCap();
+                    setInterval(fetchAVAXMarketCap, 60000); // Refresh every 60 seconds
+                  </script></td>
+
+                  <td class="table-data">
+                    <img src="./assets/images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                  <td class="table-data">
+                    <button class="btn btn-outline">Trade</button>
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- 
+        - #INSTRUCTION
+      -->
+
+      <section class="section instruction" aria-label="instruction" data-section  id="h2 section-title">
+        <div class="container">
+
+          <h2 class="h2 section-title">Crypto Starter Guide</h2>
+
+          <p class="section-text">
+            Your first step toward crypto success starts <br>
+            Your simple roadmap to understand, invest and grow in the world of crypto.
+          </p>
+
+          <ul class="instruction-list">
+
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-1.png" width="96" height="96" loading="lazy" alt="Step 1"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 1</p>
+
+                <h3 class="h3 card-title">Pick any Exchange</h3>
+
+                <p class="card-text">
+                  Download the top crypto exchanges Like Binance, Okx, Bybit & Mexc
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-2.png" width="96" height="96" loading="lazy" alt="Step 2"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 2</p>
+
+                <h3 class="h3 card-title">Fuel your Exchange</h3>
+
+                <p class="card-text">
+                  Unlock the potential of crypto trading. Turn market moves into money with crypto trading
+
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-3.png" width="96" height="96" loading="lazy" alt="Step 3"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 3</p>
+
+                <h3 class="h3 card-title">Start Trading</h3>
+
+                <p c lass="card-text">
+                  Discover market opportunities with MZA Crypto Hub and make your first successful trade
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/instruction-4.png" width="96" height="96" loading="lazy" alt="Step 4"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 4</p>
+
+                <h3 class="h3 card-title">Earn Money</h3>
+
+                <p class="card-text">
+                  Unlock the potential of crypto trading. Turn market moves into money with crypto trading
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" aria-label="about" data-section>
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="./assets/images/mza2.jpg" width="748" height="436" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+
+          <div class="about-content">
+            <h2 class="h2 ">MZA Crypto Hub </h2>
+
+            <p class="section-text">
+              Where crypto trends meet intelligent decisions
+            </p>
+
+            <ul class="section-list">
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">View real-time cryptocurrency prices</h3>
+                </div>
+
+                <p class="item-text">
+                  Access elite tools for crypto tracking, AI-based predictions, and strategic trading insights. It's
+                  time to invest with intelligence.
+                </p>
+              </li>
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">Unveiling the truth behind every token
+                </div>
+
+                <p class="item-text">
+                  Experience a variety of trading on Bitcost. You can use various types of coin transactions such as
+                  Spot Trade, Futures
+                </p>
+              </li>
+
+            </ul>
+
+            <a href="research.html" class="btn btn-primary">Explore More</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <section class="section app" aria-label="app" data-section>
+        <div class="container">
+
+          <div class="app-content">
+
+            <h3 class="h3 section-title">Empower Your Crypto Journey with <br></h3>
+            <h2 class="h2 ">MZA Crypto Hub’s </h2>
+
+            <p class="section-text">
+              Your Guide to Making Sense of Crypto. <br> Where innovation meets precision in crypto analytics.
+            </p>
+
+            <ul class="section-list">
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 style="color: white;">Dominate the Markets with MZA Crypto Analysis</h3>
+                </div>
+
+                <p class="item-text">
+                  Make smarter, faster, and more confident decisions with expert-driven data, AI tools, and market
+                  insights — All in one Platform.
+                </p>
+              </li>
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 style="color: white;">Your Crypto Growth Starts Here with MZA🚀</h3>
+                </div>
+
+                <p class="item-text">
+                  Analyze trends, predict moves, and make winning trades. MZA gives you the edge you need — Are You
+                  Ready To Lead?
+                </p>
+              </li>
+
+            </ul>
+            <a href="markets.html" class="btn btn-primary">Market overview</a>
+
+
+
+          </div>
+
+          <div class="app-banner">
+            <img src="./assets/images/mzaaa.jpg" width="618" height="526" loading="lazy" alt="MZA banner" class="w-100">
+
+            <span class="span">Smart Data, Smart Solutions</span>
+          </div>
+
+        </div>
+      </section>
+      <section style="margin-top: 125px;" id="coins">
+        <p class="graphcrypto" style="text-align: center; font-weight: bolder;">Today's Cryptocurrency Prices by Market
+          Cap</p>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+              target="_blank"><span class="blue-text"></span></a></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+            async>
+              {
+                "width": "100%",
+                  "height": "550",
+                    "defaultColumn": "overview",
+                      "screener_type": "crypto_mkt",
+                        "displayCurrency": "USD",
+                          "colorTheme": "dark",
+                            "locale": "en",
+                              "isTransparent": true
+              }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+      </section>
+
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top" data-section>
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/BLUE TRANS LOGO.png" width="50" height="50" alt="MZA logo">
+            Crypto Hub
+          </a>
+
+          <h2 class="footer-title">Let's talk! 🤙</h2>
+
+          <a href="tel:+923224304402" class="footer-contact-link">+92 322 4304402</a>
+
+          <a href="mailto:zainalviaa@gmail.com" zainalviaa@gmail.com"
+            class="footer-contact-link">zainalviaa@gmail.com</a>
+
+          <address class="footer-contact-link">
+            MZA Tech Zone Layyah(Pakistan)
+          </address>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title"></p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Pages</p>
+          </li>
+
+          <li>
+            <a href="news.html" class="footer-link">News</a>
+          </li>
+
+          <li>
+            <a href="markets.html" class="footer-link">Analysis</a>
+          </li>
+
+          <li>
+            <a href="research.html" class="footer-link">Research</a>
+          </li>
+
+          <li>
+            <a href="bubble.html" class="footer-link">Crypto Bubbles</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="ai.html" class="footer-link">Ai Assistant</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title"></p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link"></a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Download Exchanges</p>
+          </li>
+
+          <li>
+            <a href="https://www.binance.com/referral/earn-together/refertoearn2000usdc/claim?hl=en&ref=GRO_14352_XDQ70&utm_source=referralmode" class="footer-link">Binance</a>
+          </li>
+
+          <li>
+            <a href="https://www.bybit.com/invite?ref=W7EWOYA" class="footer-link">Bybit</a>
+          </li>
+
+          <li>
+            <a href="https://okx.com/join/80848988" class="footer-link">Okx</a>
+          </li>
+
+          <li>
+            <a href="https://www.bitget.com/referral/register?clacCode=A62BMVYW&from=%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter" class="footer-link">Bitget</a>
+          </li>
+
+          <li>
+            <a href="https://www.gate.io/signup/?ref_type=103" class="footer-link">Gate io</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2025 MZA Crypto Hub All Rights Reserved by <a
+            href="https://m.me/100074085341352?hash=AbauqcDQIsiJ8Tcy&source=qr_link_share" class="copyright-link">Zain
+            Awan</a>
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.facebook.com/share/1FLYaVQAte/" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/Zainawan2266?t=RVMcS_rZZq1NHVGYg-yKwA&s=08" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/zainawan2266?igsh=MTBsdnljbnRjNXpsMA==" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/alice-liu-972a92267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .mark{
+    margin-top: 75px;
+    text-align: center;
+    padding-top: -60px;
+    
+  }
+  
+  .tradingview-widget-container, 
+  .tradingview-widget-container__widget {
+    
+    height: 100vh;
+  }
+  
